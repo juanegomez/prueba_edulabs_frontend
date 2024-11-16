@@ -1,0 +1,50 @@
+<div class="bg-gray-700 flex min-h-screen items-center justify-center">
+  <div class="min-h-1/2 bg-gray-900 border border-gray-900 rounded-2xl">
+    <form
+      class="mx-4 sm:mx-24 md:mx-34 lg:mx-56 mx-auto flex items-center space-y-4 py-16 font-semibold text-gray-500 flex-col"
+      [formGroup]="form"
+      autocomplete="off"
+      (ngSubmit)="onSubmit()"
+    >
+      <h1 class="text-white text-2xl">Iniciar sesión</h1>
+      <input
+        class="w-full p-2 bg-[#E8F0FE] rounded-md border border-gray-700 focus:border-blue-700"
+        placeholder="Correo electrónico"
+        type="email"
+        formControlName="email"
+        autocomplete="off"
+        required
+      />
+      <div class="relative w-full">
+        <input
+          class="w-full p-2 bg-[#E8F0FE] rounded-md border border-gray-700 pr-20"
+          placeholder="Contraseña*"
+          [type]="passwordVisible ? 'text' : 'password'"
+          formControlName="password"
+          autocomplete="off"
+        />
+        <button
+          type="button"
+          (click)="togglePasswordVisibility()"
+          class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer"
+        >
+          {{ passwordVisible ? "Ocultar" : "Mostrar" }}
+        </button>
+      </div>
+      <input
+        class="w-full p-2 bg-gray-50 rounded-full font-bold text-gray-900 border border-gray-700"
+        type="submit"
+        name="correo"
+      />
+      <p>
+        no tienes cuenta?
+        <a class="font-semibold text-sky-700" href="">Registrate</a>
+      </p>
+      <i
+        class="fas fa-eye-slash absolute right-3 top-3 cursor-pointer"
+        style="font-size: 20px; color: gray"
+        >fsdfs</i
+      >
+    </form>
+  </div>
+</div>
