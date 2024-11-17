@@ -83,6 +83,7 @@ export default class PostsComponent implements OnInit {
           icon: 'success',
           title: 'Post creado con éxito',
           text: 'El nuevo post ha sido creado correctamente.',
+          confirmButtonColor: '#111827',
         });
 
         // Cerrar el modal y resetear el formulario
@@ -95,6 +96,7 @@ export default class PostsComponent implements OnInit {
           icon: 'error',
           title: 'Error al crear el post',
           text: 'Hubo un problema al intentar crear el post. Inténtalo nuevamente.',
+          confirmButtonColor: '#111827',
         });
         console.error(err);
       }

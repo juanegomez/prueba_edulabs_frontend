@@ -9,6 +9,11 @@ export const routes: Routes = [
         canActivate: [LoginRedirectGuard],
     },
     {
+        path: 'register',
+        loadComponent: () => import('./pages/register-form/register-form.component'),
+        canActivate: [LoginRedirectGuard],
+    },
+    {
         path: 'home',
         loadComponent: () => import('./pages/posts/posts.component'),
         canActivate: [AuthGuard],

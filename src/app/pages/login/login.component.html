@@ -18,7 +18,7 @@
       <div class="relative w-full">
         <input
           class="w-full p-2 bg-[#E8F0FE] rounded-md border border-gray-700 pr-20"
-          placeholder="Contraseña*"
+          placeholder="Contraseña"
           [type]="passwordVisible ? 'text' : 'password'"
           formControlName="password"
           autocomplete="off"
@@ -37,8 +37,10 @@
         name="correo"
       />
       <p>
-        no tienes cuenta?
-        <a class="font-semibold text-sky-700" href="">Registrate</a>
+        ¿No tienes una cuenta aún?
+        <a class="font-semibold text-sky-700" href="/register"
+          >¡Regístrate ahora!</a
+        >
       </p>
     </form>
   </div>
