@@ -4,6 +4,7 @@
     <div class="flex justify-between items-center mb-6">
       <h1 class="text-3xl font-bold">Publicaciones del Blog</h1>
       <button
+        (click)="openModal()"
         class="bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out"
       >
         Agregar post
@@ -53,6 +54,83 @@
           Publicado el: {{ post.created_at }}
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Modal para agregar nuevo post -->
+  <div
+    *ngIf="showModal"
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+  >
+    <div class="bg-[#1F2937] p-8 rounded-lg shadow-lg w-full max-w-md">
+      <h2 class="text-2xl font-bold mb-4 text-[#60A5FA]">Agregar Nuevo Post</h2>
+      <form (ngSubmit)="onSubmit()" #postForm="ngForm">
+        <div class="mb-4">
+          <label for="title" class="block text-sm font-medium mb-2"
+            >Título:</label
+          >
+          <input
+            type="text"
+            id="title"
+            name="title"
+            [(ngModel)]="newPost.title"
+            required
+            class="w-full p-2 bg-[#374151] border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-[#60A5FA] focus:border-[#60A5FA] text-[#E5E7EB]"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="content" class="block text-sm font-medium mb-2"
+            >Contenido:</label
+          >
+          <textarea
+            id="content"
+            name="content"
+            [(ngModel)]="newPost.content"
+            required
+            rows="4"
+            class="w-full p-2 bg-[#374151] border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-[#60A5FA] focus:border-[#60A5FA] text-[#E5E7EB]"
+          ></textarea>
+        </div>
+        <div class="mb-4">
+          <label for="category_id" class="block text-sm font-medium mb-2"
+            >Categoría:</label
+          >
+          <select
+            id="category_id"
+            name="category_id"
+            [(ngModel)]="newPost.category_id"
+            required
+            class="w-full p-2 bg-[#374151] border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-[#60A5FA] focus:border-[#60A5FA] text-[#E5E7EB]"
+          >
+            <option value="1">Tecnología</option>
+            <option value="2">Ciencia</option>
+            <option value="3">Salud</option>
+            <option value="4">Entretenimiento</option>
+            <option value="5">Deportes</option>
+            <option value="6">Educación</option>
+            <option value="7">Arte y Cultura</option>
+            <option value="8">Negocios</option>
+            <option value="9">Viajes</option>
+            <option value="10">Opinión</option>
+          </select>
+        </div>
+        <div class="flex justify-end space-x-4">
+          <button
+            type="button"
+            (click)="closeModal()"
+            class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out"
+          >
+            Cancelar
+          </button>
+          <button
+            type="submit"
+            [disabled]="!postForm.form.valid"
+            class="bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Guardar
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
