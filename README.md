@@ -1,27 +1,41 @@
-# PruebaEdulabsFrontend
+# Edulabs Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
+Este proyecto es la parte frontend de la aplicación Edulabs, desarrollada en Angular 18. A continuación se detallan las instrucciones para configurar y levantar el entorno de desarrollo en tu máquina local.
 
-## Development server
+## Requisitos del Sistema
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Sistema Operativo:** Ubuntu
+- **Node.js:** Versión `v22.9.0` (recomendada)
+- **NPM:** Versión `v10.9.0` (recomendada)
 
-## Code scaffolding
+## Configuración del Proyecto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. **Clonar el proyecto:**
+   Asegúrate de haber clonado este repositorio en tu máquina local.
 
-## Build
+2. **Instalar las dependencias:**
+   Ejecuta el siguiente comando para instalar las dependencias del proyecto usando npm:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+   ```bash
+   npm i
+   ```
 
-## Running unit tests
+3. **Levantar el servidor de desarrollo:** Una vez que las dependencias estén instaladas, puedes levantar el servidor de desarrollo ejecutando:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   ```bash
+   ng serve
+   ```
 
-## Running end-to-end tests
+## Notas Adicionales
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Asegúrate de tener instalada la versión de Node.js v22.9.0 y NPM v10.9.0 en tu máquina antes de continuar con la instalación.
 
-## Further help
+- Si no tienes Angular CLI instalado, puedes instalarlo globalmente ejecutando:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+  ```bash
+  npm install -g @angular/cli
+  ```
+
+- Si encuentras problemas con la instalación de dependencias o el levantamiento del servidor, verifica que Node.js y NPM estén correctamente instalados en tu sistema.
+
+**¡El proyecto ahora debería estar funcionando correctamente en tu entorno local!**
